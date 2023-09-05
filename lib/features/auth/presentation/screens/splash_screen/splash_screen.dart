@@ -25,7 +25,7 @@ class _SplashScreenState extends State<SplashScreen> {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (_) => const OnBoardingScreens(),
+          builder: (_) =>  OnBoardingScreens(),
         ),
       );
     });
@@ -34,7 +34,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.background,
+      //backgroundColor: AppColors.background,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -43,12 +43,14 @@ class _SplashScreenState extends State<SplashScreen> {
             const SizedBox(
               height: 19,
             ),
-            Text(AppStrings.appName,
+            Text(
+              AppStrings.appName,
                 style: GoogleFonts.lato(
                   color: AppColors.white,
                   fontSize: 40,
                   fontWeight: FontWeight.bold,
-                ))
+                ),
+            )
           ],
         ),
       ),

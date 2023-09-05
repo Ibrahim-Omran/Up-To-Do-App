@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
-
+import 'package:to_do_app/core/theme/theme.dart';
 import 'package:to_do_app/core/utils/app_strings.dart';
 import 'package:to_do_app/features/auth/presentation/screens/splash_screen/splash_screen.dart';
+
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return  const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       //title: 'To-Do App' => hard coded,
       title: AppStrings.appName,
-
-      home: SplashScreen(),
+      theme: getAppTheme(),
+      home: const SplashScreen(),
     );
   }
 }
