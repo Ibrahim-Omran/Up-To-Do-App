@@ -1,21 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:to_do_app/core/commons/commons.dart';
+import 'package:to_do_app/core/database/cache_helper.dart';
 import 'package:to_do_app/core/utils/app_colors.dart';
 import 'package:to_do_app/core/utils/app_strings.dart';
+import 'package:to_do_app/core/widgets/custom_elevated_button.dart';
+import 'package:to_do_app/core/widgets/custom_text_button.dart';
 import 'package:to_do_app/features/auth/data/model/on_Boarding_model.dart';
 import 'package:to_do_app/features/task/presentation/screens/home_screen.dart';
 
-class OnBoardingScreens extends StatelessWidget {
-  OnBoardingScreens({super.key});
+import '../../../../../core/services/service_locator.dart';
 
-  PageController controller = PageController();
+class OnBoardingScreens extends StatelessWidget {
+   OnBoardingScreens({super.key});
+
+   final PageController controller = PageController();
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        //backgroundColor: AppColors.background,
         body: Padding(
           padding: const EdgeInsets.all(24),
           child: PageView.builder(
@@ -28,17 +32,11 @@ class OnBoardingScreens extends StatelessWidget {
                   index != 2
                       ? Align(
                           alignment: Alignment.centerLeft,
-                          child: TextButton(
+                          child: CustomTextButton(
                             onPressed: () {
                               controller.jumpToPage(2);
                             },
-                            child: Text(
-                              AppStrings.skip.toUpperCase(),
-                              style: GoogleFonts.lato(
-                                color: AppColors.white.withOpacity(0.44),
-                                fontSize: 16,
-                              ),
-                            ),
+                            text: AppStrings.skip,
                           ),
                         )
                       : const SizedBox(
@@ -72,27 +70,22 @@ class OnBoardingScreens extends StatelessWidget {
                   const SizedBox(
                     height: 50,
                   ),
+
                   //title
                   Text(
                     OnBoardingModel.onBoardingScreen[index].title,
-                    style: GoogleFonts.lato(
-                      color: AppColors.white.withOpacity(0.87),
-                      fontSize: 32,
-                      fontWeight: FontWeight.bold,
-                    ),
+                    style: Theme.of(context).textTheme.displayLarge,
                   ),
 
-                  //subtitle
                   const SizedBox(
                     height: 42,
                   ),
+
+                  //subtitle
                   Text(
                     OnBoardingModel.onBoardingScreen[index].subTitle,
                     textAlign: TextAlign.center,
-                    style: GoogleFonts.lato(
-                      color: AppColors.white.withOpacity(0.87),
-                      fontSize: 16,
-                    ),
+                    style: Theme.of(context).textTheme.displayMedium,
                   ),
 
                   const SizedBox(
@@ -104,20 +97,14 @@ class OnBoardingScreens extends StatelessWidget {
                     children: [
                       //back button
                       index != 0
-                          ? TextButton(
+                          ? CustomTextButton(
+                              text: AppStrings.back,
                               onPressed: () {
                                 controller.previousPage(
                                   duration: const Duration(milliseconds: 1000),
                                   curve: Curves.fastLinearToSlowEaseIn,
                                 );
                               },
-                              child: Text(
-                                AppStrings.back.toUpperCase(),
-                                style: GoogleFonts.lato(
-                                  color: AppColors.white.withOpacity(0.44),
-                                  fontSize: 16,
-                                ),
-                              ),
                             )
                           : Container(),
 
@@ -125,41 +112,32 @@ class OnBoardingScreens extends StatelessWidget {
 
                       //next button
                       index != 2
-                          ? ElevatedButton(
+                          ? CustomElevatedButton(
+                              text: AppStrings.next,
                               onPressed: () {
                                 controller.nextPage(
                                   duration: const Duration(milliseconds: 1000),
                                   curve: Curves.fastLinearToSlowEaseIn,
                                 );
                               },
-                              style: ElevatedButton.styleFrom(
-                                  backgroundColor: AppColors.primary,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(4),
-                                  )),
-                              child: Text(
-                                AppStrings.next.toUpperCase(),
-                              ),
                             )
-                          : ElevatedButton(
-                              onPressed: () {
+                          : CustomElevatedButton(
+                              text: AppStrings.getStarted,
+                              onPressed: () async {
                                 // Navigate to home screen
-                                Navigator.pushReplacement(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (_) => const HomeScreen(),
-                                  ),
-                                );
-
+                                await sl<CacheHelper>()
+                                    .saveData(
+                                        key: AppStrings.onBoardingKey,
+                                        value: true)
+                                    .then((value) {
+                                  navigateScreen(
+                                    context: context,
+                                    screen: const HomeScreen(),
+                                  );
+                                }).catchError((e) {
+                                  debugPrint(e.toString());
+                                });
                               },
-                              style: ElevatedButton.styleFrom(
-                                  backgroundColor: AppColors.primary,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(4),
-                                  )),
-                              child: Text(
-                                AppStrings.getStarted.toUpperCase(),
-                              ),
                             ),
                     ],
                   ),

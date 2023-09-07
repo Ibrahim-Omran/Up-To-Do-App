@@ -14,6 +14,8 @@ class MyApp extends StatelessWidget {
       //title: 'To-Do App' => hard coded,
       title: AppStrings.appName,
       theme: getAppTheme(),
+      darkTheme: getAppDarkTheme(),
+      themeMode: ThemeMode.light,
       home: const SplashScreen(),
     );
   }

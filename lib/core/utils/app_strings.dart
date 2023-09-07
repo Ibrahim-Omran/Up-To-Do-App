@@ -1,10 +1,10 @@
 class AppStrings {
 
   static const String appName = "UpTodo";
-  static const String skip = "Skip";
-  static const String next = "Next";
-  static const String back = "Back";
-  static const String getStarted = "Get Started";
+  static const String skip = "SKIP";
+  static const String next = "NEXT";
+  static const String back = "BACK";
+  static const String getStarted = "GET STARTED";
 
   static const String onBoardingTitleOne = "Manage your tasks";
   static const String onBoardingSubTitleOne =
@@ -35,5 +35,6 @@ class AppStrings {
   static const String taskCompleted = "Task Completed";
   static const String deleteTask = "Delete Task";
   static const String cancel = "Cancel";
+  static const String onBoardingKey = "onBoarding";
 
 }
