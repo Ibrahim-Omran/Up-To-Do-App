@@ -8,3 +8,13 @@ void navigateScreen({required BuildContext context, required Widget screen}) {
     ),
   );
 }
+
+
+void navigatePushScreen({required BuildContext context, required Widget screen}) {
+  Navigator.push(
+    context,
+    MaterialPageRoute(
+      builder: (_) => screen,
+    ),
+  );
+}

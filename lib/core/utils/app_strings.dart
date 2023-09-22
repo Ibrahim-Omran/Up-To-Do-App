@@ -32,9 +32,12 @@ class AppStrings {
   static const String createTask = "Create task";
   static const String toDo = "TODO";
   static const String completed = "COMPLETED";
-  static const String taskCompleted = "Task Completed";
-  static const String deleteTask = "Delete Task";
-  static const String cancel = "Cancel";
+  static const String taskCompleted = "TASK COMPLETED";
+  static const String deleteTask = "DELETE TASK";
+  static const String cancel = "CANCEL";
   static const String onBoardingKey = "onBoarding";
+  static const String color = "Color";
+  static const String noteErrorMsg = "Enter Valid Note";
+  static const String titleErrorMsg = "Enter Valid Title";
 
 }

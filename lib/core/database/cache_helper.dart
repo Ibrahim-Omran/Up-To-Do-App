@@ -6,7 +6,7 @@ class CacheHelper {
 
   //Here The Initialize of cache .
 
-    init() async {
+     init() async {
     sharedPreferences = await SharedPreferences.getInstance();
   }
 

@@ -13,4 +13,5 @@ class AppColors{
   static const Color purple = Color(0xff9741CC) ;
   static const Color grey = Color(0xff979797) ;
   static const Color deepGrey = Color(0xff424242) ;
+  static const Color backGroundTextField = Color(0xff1D1D1D) ;
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:to_do_app/core/commons/commons.dart';
 import 'package:to_do_app/core/database/cache_helper.dart';
@@ -7,7 +8,7 @@ import 'package:to_do_app/core/utils/app_strings.dart';
 import 'package:to_do_app/core/widgets/custom_elevated_button.dart';
 import 'package:to_do_app/core/widgets/custom_text_button.dart';
 import 'package:to_do_app/features/auth/data/model/on_Boarding_model.dart';
-import 'package:to_do_app/features/task/presentation/screens/home_screen.dart';
+import 'package:to_do_app/features/task/presentation/screens/home_screen/home_screen.dart';
 
 import '../../../../../core/services/service_locator.dart';
 
@@ -39,12 +40,12 @@ class OnBoardingScreens extends StatelessWidget {
                             text: AppStrings.skip,
                           ),
                         )
-                      : const SizedBox(
-                          height: 54,
+                      :  SizedBox(
+                          height: 54.h,
                         ),
 
-                  const SizedBox(
-                    height: 16,
+                   SizedBox(
+                    height: 16.h,
                   ),
 
                   //image
@@ -52,8 +53,8 @@ class OnBoardingScreens extends StatelessWidget {
                     OnBoardingModel.onBoardingScreen[index].imgPath,
                   ),
 
-                  const SizedBox(
-                    height: 16,
+                   SizedBox(
+                    height: 16.h,
                   ),
 
                   //dotes
@@ -67,8 +68,8 @@ class OnBoardingScreens extends StatelessWidget {
                     ),
                   ),
 
-                  const SizedBox(
-                    height: 50,
+                   SizedBox(
+                    height: 50.h,
                   ),
 
                   //title
@@ -77,8 +78,8 @@ class OnBoardingScreens extends StatelessWidget {
                     style: Theme.of(context).textTheme.displayLarge,
                   ),
 
-                  const SizedBox(
-                    height: 42,
+                   SizedBox(
+                    height: 42.h,
                   ),
 
                   //subtitle
@@ -88,8 +89,8 @@ class OnBoardingScreens extends StatelessWidget {
                     style: Theme.of(context).textTheme.displayMedium,
                   ),
 
-                  const SizedBox(
-                    height: 107,
+                   SizedBox(
+                    height: 107.h,
                   ),
 
                   //buttons

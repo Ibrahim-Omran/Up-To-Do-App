@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:to_do_app/core/commons/commons.dart';
 import 'package:to_do_app/core/database/cache_helper.dart';
 import 'package:to_do_app/core/utils/app_strings.dart';
 import 'package:to_do_app/features/auth/presentation/screens/on_boarding_screens/on_boarding_screens.dart';
-import 'package:to_do_app/features/task/presentation/screens/home_screen.dart';
+import 'package:to_do_app/features/task/presentation/screens/home_screen/home_screen.dart';
 import '../../../../../core/services/service_locator.dart';
 import '../../../../../core/utils/app_assets.dart';
 
@@ -42,8 +43,8 @@ class _SplashScreenState extends State<SplashScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(AppAssets.logo),
-            const SizedBox(
-              height: 19,
+             SizedBox(
+              height: 19.h,
             ),
             Text(
               AppStrings.appName,
