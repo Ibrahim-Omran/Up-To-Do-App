@@ -7,7 +7,7 @@
     <a href="https://www.linkedin.com/in/ibrahim-haroon-omran-a35444222/" target="_blank">
         <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank" />
     </a>
-  <a href="mailto:omranibrahim@gmail.com">
+  <a href="mailto:omranibraheem705@gmail.com">
     <img src="https://img.shields.io/badge/Gmail-333333?style=for-the-badge&logo=gmail&logoColor=red" />
   </a>
     <a href="https://youtube.com/@ibrahimomran8085?si=bHNizIHn9dIL3jX7">
@@ -37,7 +37,7 @@
 
 <hr>
 <h3>
-  <a href="https://www.youtube.com/watch?v=eRK9pI98EUk&list=PLYfTCw9blWRNh4jiQO3kVNd34jUD6MD9m&index=1&t=4s&pp=gAQBiAQB">
+<!--   <a href="https://www.youtube.com/watch?v=eRK9pI98EUk&list=PLYfTCw9blWRNh4jiQO3kVNd34jUD6MD9m&index=1&t=4s&pp=gAQBiAQB">
     👨🏻‍🎓 Get this app on YouTube Playlist Tutorials
   </a>
 </h3>
@@ -46,7 +46,7 @@
      <kbd>
         <img  src="https://github.com/AmmarAgeeza/Up-To-Do-App/assets/72443818/0f267f9e-d2a3-41c6-8a4b-17a0b12abd6d" alt="Get this app on YouTube Playlist Tutorials">
      </kbd>
-  </a>
+  </a> -->
 
 
 ## 📁 File Structure
